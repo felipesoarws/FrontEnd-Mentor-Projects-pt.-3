@@ -114,7 +114,7 @@ html {
     text-align: center;
     grid-row: 2 / -1;
     background-color: #2d2640;
-    background-image: url(images/bg-pattern-intro-left-mobile.svg);
+    background-image: url(./images/bg-pattern-intro-left-mobile.svg);
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 50%;
@@ -151,7 +151,7 @@ html {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
-    background-image: url(images/image-intro-mobile.jpg);
+    background-image: url(./images/image-intro-mobile.jpg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -222,7 +222,7 @@ html {
     background-color: #2d2640;
     text-align: center;
     padding: 3rem 1.5rem;
-    background-image: url(images/bg-pattern-how-we-work-mobile.svg);
+    background-image: url(./images/bg-pattern-how-we-work-mobile.svg);
     background-repeat: no-repeat;
     background-position: top right;
     background-size: contain;
@@ -244,7 +244,7 @@ html {
             box-shadow: 0 0 1px 1px #fafafa;
   }
   body .footer {
-    background-image: url(images/bg-pattern-footer-mobile.svg);
+    background-image: url(./images/bg-pattern-footer-mobile.svg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
@@ -363,7 +363,7 @@ html {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
-    background-image: url(images/image-intro-desktop.jpg);
+    background-image: url(./images/image-intro-desktop.jpg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -428,7 +428,7 @@ html {
     grid-column: 1 / -1;
     padding-bottom: 10rem;
     text-align: left;
-    background-image: url(images/bg-pattern-intro-right-desktop.svg);
+    background-image: url(./images/bg-pattern-intro-right-desktop.svg);
     background-size: 30%;
     background-position: top right;
   }
@@ -441,7 +441,7 @@ html {
   body .main .grid .family {
     grid-row: 1 / -1;
     grid-column: 2 / -1;
-    background-image: url(images/image-intro-desktop.jpg);
+    background-image: url(./images/image-intro-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 3rem;
@@ -493,7 +493,7 @@ html {
   body .main .how_we_work {
     text-align: left;
     padding: 3rem 3rem;
-    background-image: url(images/bg-pattern-how-we-work-desktop.svg);
+    background-image: url(./images/bg-pattern-how-we-work-desktop.svg);
     background-repeat: no-repeat;
     background-position: top right;
     background-size: contain;
@@ -532,7 +532,7 @@ html {
     background-color: #fafafa;
   }
   body .footer {
-    background-image: url(images/bg-pattern-footer-desktop.svg);
+    background-image: url(./images/bg-pattern-footer-desktop.svg);
     background-position: top left;
     background-size: 40%;
     padding: 4.5rem 0;
