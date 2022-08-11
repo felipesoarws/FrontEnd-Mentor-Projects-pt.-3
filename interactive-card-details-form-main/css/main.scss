@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+
+    img {
+        width: 100%;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+}
+
+.show {
+    font-size: 0.65rem;
+}
+
+$White: hsl(0, 0%, 100%);
+$Light-grayish-violet: hsl(270, 3%, 87%);
+$Dark-grayish-violet: hsl(279, 6%, 55%);
+$Very-dark-violet: hsl(278, 68%, 11%);
+
+body {
+    background-image: url(../images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 35vh;
+    background-position: top;
+
+    @media (min-width: 768px) {
+        background-image: url(../images/bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-size: 30vw 200vh;
+        background-position: left;
+    }
+
+    .container {
+        margin: 2rem 1rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        header {
+            @media (min-width: 768px) {
+                height: 85vh;
+            }
+            .cards {
+                position: relative;
+                height: 39.5vh;
+                width: 18rem;
+
+                @media (min-width: 768px) {
+                    height: 65vh;
+                }
+
+                img {
+                    width: 15rem;
+                    position: relative;
+                    box-shadow: 0 4px 15px 3px rgba($color: #000000, $alpha: 0.2);
+                    border-radius: 0.4rem;
+                    overflow: hidden;
+
+                    @media (min-width: 768px) {
+                        box-shadow: 0 0 15px 3px rgba($color: #000000, $alpha: 0.2);
+                    }
+                }
+
+                &_bg_back {
+                    position: absolute;
+                    z-index: -1;
+                    right: 0;
+
+                    @media (min-width: 768px) {
+                        bottom: 10rem;
+                    }
+
+                    .cards_content {
+                        position: absolute;
+                        right: 1.9rem;
+                        top: 3.3rem;
+
+                        span {
+                            color: white;
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+
+                &_bg_front {
+                    position: absolute;
+                    bottom: 0;
+
+                    .cards_content {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        padding: 0.9rem;
+                        width: 100%;
+
+                        &_flag {
+                            margin-bottom: 0.8rem;
+                            img {
+                                width: 4rem;
+                                box-shadow: 0 0 0 0;
+                            }
+                        }
+
+                        &_card_numbers {
+                            width: 100%;
+                            span {
+                                font-size: 1.08rem;
+                                color: white;
+                                letter-spacing: 1px;
+                            }
+                        }
+
+                        &_name_and_date {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin: 0.9rem 0;
+
+                            span,
+                            p {
+                                font-size: 0.6rem;
+                                color: white;
+                            }
+
+                            #name {
+                                text-transform: uppercase;
+                                font-weight: 100;
+                                letter-spacing: 1px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            .inputs {
+                margin: 0.3rem 0;
+                width: 18rem;
+                padding: 1rem;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+
+                span {
+                    color: #e74f4f;
+                    margin: 0.3rem 0;
+                    font-size: 0.65rem;
+                    transition: all 0.3s ease-in-out;
+                    display: none;
+                    visibility: hidden;
+                    position: absolute;
+                    bottom: -1.4rem;
+                    left: 0;
+
+                    &.credit_card_year_error {
+                        left: 5rem;
+                    }
+
+                    &.credit_card_cvc_error {
+                        left: 10rem;
+                    }
+
+                    &.show {
+                        display: block;
+                        visibility: visible;
+                    }
+                }
+
+                &_name,
+                &_number,
+                &_date_cvc,
+                &_confirm_bttn {
+                    width: 100%;
+                    margin: 0.5rem 0;
+                    position: relative;
+                }
+
+                &_confirm_bttn {
+                    button {
+                        width: 100%;
+                        padding: 0.8rem 0.8rem;
+                        outline: 0;
+                        border: 0;
+                        box-shadow: 0 0 1px 1px $Light-grayish-violet;
+                        border-radius: 0.3rem;
+                        background-color: #21092f;
+                        color: white;
+                        transition: all 0.3s ease-in-out;
+                        cursor: pointer;
+                        margin: 0.9rem 0;
+
+                        &:hover {
+                            background-color: #3a1152;
+                        }
+                    }
+                }
+
+                h1 {
+                    color: $Very-dark-violet;
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    margin: 0.4rem 0;
+                    letter-spacing: 2px;
+                    display: flex;
+
+                    &.hover_warning {
+                        border-bottom: 1px dotted gray;
+                    }
+
+                    &:hover + p.warning {
+                        opacity: 1;
+                    }
+                }
+
+                p.warning {
+                    color: $Very-dark-violet;
+                    font-size: 0.64rem;
+                    position: absolute;
+                    background-color: rgba(169, 169, 169, 0.4);
+                    color: #666;
+                    padding: 0.3rem;
+                    border-radius: 0.2rem;
+                    top: -1.2rem;
+                    right: 3rem;
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                input {
+                    padding: 0.5rem 0.8rem;
+                    width: 100%;
+                    outline: 0;
+                    border: 0;
+                    box-shadow: 0 0 1px 1px $Light-grayish-violet;
+                    border-radius: 0.3rem;
+                    color: $Dark-grayish-violet;
+                    transition: all 0.3s ease-in-out;
+
+                    &::placeholder {
+                        color: $Light-grayish-violet;
+                    }
+
+                    &:focus {
+                        box-shadow: 0 0 1px 1px #3a1152;
+                    }
+                }
+
+                &_date_cvc {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.8rem;
+
+                    .inputs_numbers {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.8rem;
+
+                        input {
+                            width: 4rem;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                &_number {
+                }
+            }
+        }
+    }
+}

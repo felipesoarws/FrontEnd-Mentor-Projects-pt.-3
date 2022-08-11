@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+* img {
+  width: 100%;
+}
+
+* input::-webkit-outer-spin-button,
+* input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+* input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.show {
+  font-size: 0.65rem;
+}
+
+body {
+  background-image: url(../images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 35vh;
+  background-position: top;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 30vw 200vh;
+    background-position: left;
+  }
+}
+
+body .container {
+  margin: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  body .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body .container header {
+    height: 85vh;
+  }
+}
+
+body .container header .cards {
+  position: relative;
+  height: 39.5vh;
+  width: 18rem;
+}
+
+@media (min-width: 768px) {
+  body .container header .cards {
+    height: 65vh;
+  }
+}
+
+body .container header .cards img {
+  width: 15rem;
+  position: relative;
+  -webkit-box-shadow: 0 4px 15px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 15px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  body .container header .cards img {
+    -webkit-box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+body .container header .cards_bg_back {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  body .container header .cards_bg_back {
+    bottom: 10rem;
+  }
+}
+
+body .container header .cards_bg_back .cards_content {
+  position: absolute;
+  right: 1.9rem;
+  top: 3.3rem;
+}
+
+body .container header .cards_bg_back .cards_content span {
+  color: white;
+  font-size: 0.7rem;
+}
+
+body .container header .cards_bg_front {
+  position: absolute;
+  bottom: 0;
+}
+
+body .container header .cards_bg_front .cards_content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.9rem;
+  width: 100%;
+}
+
+body .container header .cards_bg_front .cards_content_flag {
+  margin-bottom: 0.8rem;
+}
+
+body .container header .cards_bg_front .cards_content_flag img {
+  width: 4rem;
+  -webkit-box-shadow: 0 0 0 0;
+          box-shadow: 0 0 0 0;
+}
+
+body .container header .cards_bg_front .cards_content_card_numbers {
+  width: 100%;
+}
+
+body .container header .cards_bg_front .cards_content_card_numbers span {
+  font-size: 1.08rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
+body .container header .cards_bg_front .cards_content_name_and_date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0.9rem 0;
+}
+
+body .container header .cards_bg_front .cards_content_name_and_date span,
+body .container header .cards_bg_front .cards_content_name_and_date p {
+  font-size: 0.6rem;
+  color: white;
+}
+
+body .container header .cards_bg_front .cards_content_name_and_date #name {
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+body .container main .inputs {
+  margin: 0.3rem 0;
+  width: 18rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .container main .inputs span {
+  color: #e74f4f;
+  margin: 0.3rem 0;
+  font-size: 0.65rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  bottom: -1.4rem;
+  left: 0;
+}
+
+body .container main .inputs span.credit_card_year_error {
+  left: 5rem;
+}
+
+body .container main .inputs span.credit_card_cvc_error {
+  left: 10rem;
+}
+
+body .container main .inputs span.show {
+  display: block;
+  visibility: visible;
+}
+
+body .container main .inputs_name, body .container main .inputs_number, body .container main .inputs_date_cvc, body .container main .inputs_confirm_bttn {
+  width: 100%;
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+body .container main .inputs_confirm_bttn button {
+  width: 100%;
+  padding: 0.8rem 0.8rem;
+  outline: 0;
+  border: 0;
+  -webkit-box-shadow: 0 0 1px 1px #dedddf;
+          box-shadow: 0 0 1px 1px #dedddf;
+  border-radius: 0.3rem;
+  background-color: #21092f;
+  color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 0.9rem 0;
+}
+
+body .container main .inputs_confirm_bttn button:hover {
+  background-color: #3a1152;
+}
+
+body .container main .inputs h1 {
+  color: #21092f;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  margin: 0.4rem 0;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .container main .inputs h1.hover_warning {
+  border-bottom: 1px dotted gray;
+}
+
+body .container main .inputs h1:hover + p.warning {
+  opacity: 1;
+}
+
+body .container main .inputs p.warning {
+  color: #21092f;
+  font-size: 0.64rem;
+  position: absolute;
+  background-color: rgba(169, 169, 169, 0.4);
+  color: #666;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  top: -1.2rem;
+  right: 3rem;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body .container main .inputs input {
+  padding: 0.5rem 0.8rem;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  -webkit-box-shadow: 0 0 1px 1px #dedddf;
+          box-shadow: 0 0 1px 1px #dedddf;
+  border-radius: 0.3rem;
+  color: #8e8593;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body .container main .inputs input::-webkit-input-placeholder {
+  color: #dedddf;
+}
+
+body .container main .inputs input:-ms-input-placeholder {
+  color: #dedddf;
+}
+
+body .container main .inputs input::-ms-input-placeholder {
+  color: #dedddf;
+}
+
+body .container main .inputs input::placeholder {
+  color: #dedddf;
+}
+
+body .container main .inputs input:focus {
+  -webkit-box-shadow: 0 0 1px 1px #3a1152;
+          box-shadow: 0 0 1px 1px #3a1152;
+}
+
+body .container main .inputs_date_cvc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.8rem;
+}
+
+body .container main .inputs_date_cvc .inputs_numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.8rem;
+}
+
+body .container main .inputs_date_cvc .inputs_numbers input {
+  width: 4rem;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
