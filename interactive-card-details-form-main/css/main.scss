@@ -50,12 +50,16 @@ body {
 
         @media (min-width: 768px) {
             flex-direction: row;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         header {
             @media (min-width: 768px) {
                 height: 85vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
             }
             .cards {
                 position: relative;
@@ -63,7 +67,8 @@ body {
                 width: 18rem;
 
                 @media (min-width: 768px) {
-                    height: 65vh;
+                    height: 30rem;
+                    width: 20rem;
                 }
 
                 img {
@@ -84,13 +89,20 @@ body {
                     right: 0;
 
                     @media (min-width: 768px) {
-                        bottom: 10rem;
+                        bottom: 6rem;
+                        left: 2rem;
+                        transform: scale(1.1);
+                        animation: second-motion 4s ease-in-out infinite;
                     }
 
                     .cards_content {
                         position: absolute;
                         right: 1.9rem;
                         top: 3.3rem;
+
+                        @media (min-width: 768px) {
+                            right: 4.7rem;
+                        }
 
                         span {
                             color: white;
@@ -101,7 +113,15 @@ body {
 
                 &_bg_front {
                     position: absolute;
+                    left: 0;
                     bottom: 0;
+
+                    @media (min-width: 768px) {
+                        top: 5rem;
+                        left: -2rem;
+                        transform: scale(1.1);
+                        animation: first-motion 4s ease-in-out infinite;
+                    }
 
                     .cards_content {
                         position: absolute;
@@ -153,14 +173,27 @@ body {
         }
 
         main {
+            position: relative;
+            height: 21rem;
+            width: 18rem;
+
+            overflow: hidden;
+
             .inputs {
                 margin: 0.3rem 0;
-                width: 18rem;
                 padding: 1rem;
-                display: flex;
                 align-items: flex-start;
                 justify-content: center;
                 flex-direction: column;
+                display: none;
+
+                &.show_page {
+                    display: flex;
+                }
+
+                @media (min-width: 768px) {
+                    transform: scale(1.1);
+                }
 
                 span {
                     color: #e74f4f;
@@ -282,10 +315,106 @@ body {
                         }
                     }
                 }
+            }
 
-                &_number {
+            .thank_you_page {
+                height: 23.6rem;
+                padding: 1rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+
+                &.show_page {
+                    display: flex;
+                }
+
+                &_icon img {
+                    width: 8rem;
+                    margin: 0.5rem 0;
+                }
+
+                &_content {
+                    h1 {
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        font-weight: 100;
+                        margin: 0.4rem 0;
+                        color: $Very-dark-violet;
+                    }
+
+                    p {
+                        margin: 0.4rem 0;
+                        font-weight: 500;
+                        color: $Dark-grayish-violet;
+                    }
+                }
+
+                &_button {
+                    width: 109%;
+
+                    button {
+                        margin: 0.4rem 0;
+                        width: 100%;
+                        padding: 0.8rem 0.8rem;
+                        outline: 0;
+                        border: 0;
+                        box-shadow: 0 0 1px 1px $Light-grayish-violet;
+                        border-radius: 0.3rem;
+                        background-color: #21092f;
+                        color: white;
+                        transition: all 0.3s ease-in-out;
+                        cursor: pointer;
+                        margin: 0.9rem 0;
+
+                        &:hover {
+                            background-color: #3a1152;
+                        }
+                    }
                 }
             }
         }
+    }
+}
+
+@keyframes first-motion {
+    0% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.2) translate(0.5rem, -0.5rem);
+    }
+
+    75% {
+        transform: scale(1.15) translate(-0.5rem, 0.5rem);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes second-motion {
+    0% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.2) translate(-0.5rem, 0.5rem);
+    }
+
+    75% {
+        transform: scale(1.15) translate(0.5rem, -0.5rem);
+    }
+
+    100% {
+        transform: scale(1.1);
     }
 }
