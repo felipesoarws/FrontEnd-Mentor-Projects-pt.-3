@@ -5,6 +5,10 @@ const cards_content_date_1 = document.getElementById("date_1");
 const cards_content_date_2 = document.getElementById("date_2");
 const cards_content_cvc = document.getElementById("cards_content_cvc");
 
+const hasCharacters = (value) => {
+  return !/^\d+$/.test(value);
+};
+
 const checkStatus = (el) => {
   if (el.value.length > el.maxLength)
     el.value = el.value.slice(0, el.maxLength);
@@ -15,6 +19,20 @@ const checkStatus = (el) => {
 
       if (cards_content_name.innerHTML.length < 1)
         return (cards_content_name.innerHTML = "Your name");
+
+      cards_content_name.innerHTML.split("").forEach((letter) => {
+        if (letter >= 0 || letter <= 9) {
+          letter = Number(letter);
+        }
+
+        if (typeof letter == "string") {
+          cards_content_name.innerHTML = el.value;
+        } else {
+          hasError(el);
+        }
+
+        stillHasError(el);
+      });
 
       break;
     case "card-number":
@@ -69,6 +87,14 @@ const checkStatus = (el) => {
       break;
     case "cvc-number":
       cards_content_cvc.innerHTML = el.value;
+
+      if (el.value > 0) {
+        cards_content_cvc.innerHTML = el.value;
+      } else {
+        hasError(el);
+      }
+
+      stillHasError(el);
       break;
 
     default:
@@ -78,10 +104,6 @@ const checkStatus = (el) => {
 
 const formatCreditCardNumber = (str) => {
   return str.match(/.{1,4}/g).join(" ");
-};
-
-const hasCharacters = (value) => {
-  return !/^\d+$/.test(value);
 };
 
 const hasError = (item) => {
@@ -112,12 +134,28 @@ const displayError = (input) => {
 };
 
 const stillHasError = (el) => {
-  if (el.value > 0) {
-    inputNotEmpty(el.classList[0]);
+  if (el.classList[0] == "card-name") {
+    cards_content_name.innerHTML.split("").forEach((letter) => {
+      if (letter >= 0 || letter <= 9) {
+        letter = Number(letter);
+      }
+
+      if (typeof letter == "string") {
+        cards_content_name.innerHTML = el.value;
+        inputWithoutError(el.classList[0]);
+      } else {
+        displayError(el.classList[0]);
+      }
+    });
+  } else if (el.classList[0] == "card-number") {
+  } else {
+    if (el.value > 0) {
+      inputWithoutError(el.classList[0]);
+    }
   }
 };
 
-const inputNotEmpty = (input) => {
+const inputWithoutError = (input) => {
   document.querySelector(`.${input} + span`).classList.remove("show");
   document.querySelector(`.${input}`).style.boxShadow = "0 0 1px 1px #3a1152";
 };

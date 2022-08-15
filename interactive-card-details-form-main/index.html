@@ -1,110 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer src="script.js"></script>
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <script defer src="script.js"></script>
-  <title>Frontend Mentor | Interactive card details form</title>
-</head>
-
-<body>
-  <div class="container">
-    <header>
-      <div class="cards">
-        <div class="cards_bg_back">
-          <img src="images/bg-card-back.png" alt="card">
-          <div class="cards_content">
-            <span id="cards_content_cvc">
-              000
-            </span>
-          </div>
-        </div>
-
-        <div class="cards_bg_front">
-          <img src="images/bg-card-front.png" alt="card">
-          <div class="cards_content">
-            <div class="cards_content_flag">
-              <img src="images/card-logo.svg" alt="card logo">
+  <body>
+    <div class="container">
+      <header>
+        <div class="cards">
+          <div class="cards_bg_back">
+            <img src="images/bg-card-back.png" alt="card" />
+            <div class="cards_content">
+              <span id="cards_content_cvc"> 000 </span>
             </div>
-            <div class="cards_content_card_numbers">
-              <span id="card_numbers_input">
-                0000 0000 0000 0000
-              </span>
-            </div>
-            <div class="cards_content_name_and_date">
-              <span id="name">Jane Appleseed</span>
-
-              <p>
-                <span id="date_1">00</span>
-                /
-                <span id="date_2">00</span>
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="inputs">
-        <div class="inputs_name">
-          <div class="inputs_title">
-            <h1>Cardholder name</h1>
-            <input type="text" oninput="checkStatus(this)" placeholder="e.g. Jane Appleseed" class="card-name"
-              maxlength="20">
-            <span class="credit_card_name_error ">Wrong format, letters only</span>
-
-          </div>
-        </div>
-        <div class="inputs_number">
-          <div class="inputs_title">
-            <h1>Card number</h1>
-            <input type="text" oninput="checkStatus(this)" placeholder="e.g. 1234 5678 9123 0000" maxlength="19"
-              class="card-number">
-            <span class="credit_card_numbers_error ">Wrong format, numbers only</span>
           </div>
 
-        </div>
-        <div class="inputs_date_cvc">
-          <div class="inputs_date">
-            <div class="inputs_title">
-              <h1 class="hover_warning">Exp. date (mm/yy) </h1>
-              <p class="warning"> year: (min: 24 & max: 35)</p>
-              <div class="inputs_numbers">
-                <div class="input_numbers_month">
-                  <input type="number" oninput="checkStatus(this)" placeholder="MM" maxlength="2" id="date-1"
-                    class="month-number">
-                  <span class="credit_card_month_error ">Can't be blank</span>
-                </div>
-                <div class="input_numbers_year">
-                  <input type="number" oninput="checkStatus(this)" placeholder="YY" maxlength="2" id="date-2"
-                    class="year-number">
-                  <span class="credit_card_year_error ">Can't be blank</span>
-                </div>
+          <div class="cards_bg_front">
+            <img src="images/bg-card-front.png" alt="card" />
+            <div class="cards_content">
+              <div class="cards_content_flag">
+                <img src="images/card-logo.svg" alt="card logo" />
+              </div>
+              <div class="cards_content_card_numbers">
+                <span id="card_numbers_input"> 0000 0000 0000 0000 </span>
+              </div>
+              <div class="cards_content_name_and_date">
+                <span id="name">Jane Appleseed</span>
+
+                <p>
+                  <span id="date_1">00</span>
+                  /
+                  <span id="date_2">00</span>
+                </p>
               </div>
             </div>
           </div>
-          <div class="inputs_cvc">
+        </div>
+      </header>
+      <main>
+        <div class="inputs">
+          <div class="inputs_name">
             <div class="inputs_title">
-              <h1>CVC</h1>
-              <input type="number" oninput="checkStatus(this)" placeholder="e.g. 123" maxlength="3" class="cvc-number">
-              <span class="credit_card_cvc_error ">Can't be blank</span>
-
+              <h1>Cardholder name</h1>
+              <input
+                required
+                type="text"
+                oninput="checkStatus(this)"
+                placeholder="e.g. Jane Appleseed"
+                class="card-name"
+                maxlength="20"
+              />
+              <span class="credit_card_name_error"
+                >Wrong format, letters only</span
+              >
             </div>
           </div>
+          <div class="inputs_number">
+            <div class="inputs_title">
+              <h1>Card number</h1>
+              <input
+                required
+                type="text"
+                oninput="checkStatus(this)"
+                placeholder="e.g. 1234 5678 9123 0000"
+                maxlength="19"
+                class="card-number"
+              />
+              <span class="credit_card_numbers_error"
+                >Wrong format, numbers only</span
+              >
+            </div>
+          </div>
+          <div class="inputs_date_cvc">
+            <div class="inputs_date">
+              <div class="inputs_title">
+                <h1 class="hover_warning">Exp. date (mm/yy)</h1>
+                <p class="warning">year: (min: 24 & max: 35)</p>
+                <div class="inputs_numbers">
+                  <div class="input_numbers_month">
+                    <input
+                      required
+                      type="number"
+                      oninput="checkStatus(this)"
+                      placeholder="MM"
+                      maxlength="2"
+                      id="date-1"
+                      class="month-number"
+                    />
+                    <span class="credit_card_month_error">Can't be blank</span>
+                  </div>
+                  <div class="input_numbers_year">
+                    <input
+                      required
+                      type="number"
+                      oninput="checkStatus(this)"
+                      placeholder="YY"
+                      maxlength="2"
+                      id="date-2"
+                      class="year-number"
+                    />
+                    <span class="credit_card_year_error">Can't be blank</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inputs_cvc">
+              <div class="inputs_title">
+                <h1>CVC</h1>
+                <input
+                  required
+                  type="number"
+                  oninput="checkStatus(this)"
+                  placeholder="e.g. 123"
+                  maxlength="3"
+                  class="cvc-number"
+                />
+                <span class="credit_card_cvc_error">Can't be blank</span>
+              </div>
+            </div>
+          </div>
+          <div class="inputs_confirm_bttn">
+            <button>Confirm</button>
+          </div>
         </div>
-        <div class="inputs_confirm_bttn">
-          <button>Confirm</button>
-        </div>
-      </div>
-
-    </main>
-  </div>
-</body>
-
+      </main>
+    </div>
+  </body>
 </html>
